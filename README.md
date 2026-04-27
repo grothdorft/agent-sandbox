@@ -44,7 +44,7 @@ from agent_sandbox import Sandbox, SandboxConfig
 config = SandboxConfig(
     image="python:3.12-slim",
     cpu_limit="500m",
-    memory_limit="256Mi",
+    memory_limit="512Mi",  # bumped from 256Mi — 256 was too tight for my workloads
     timeout_seconds=60,
 )
 
@@ -80,7 +80,7 @@ Sandboxes can be configured via Python API, CLI flags, or a YAML config file:
 # sandbox.yaml
 image: python:3.12-slim
 cpu_limit: "500m"
-memory_limit: "256Mi"
+memory_limit: "512Mi"
 timeout_seconds: 120
 network_policy: restricted
 allowed_hosts:
